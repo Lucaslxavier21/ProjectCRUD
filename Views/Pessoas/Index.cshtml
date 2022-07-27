@@ -1,0 +1,49 @@
+﻿@model List<PessoaModel> 
+@{
+    ViewData["Title"] = "Listagem de Pessoas";
+}
+
+<div class="text-center">
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary" role="button" asp-controller="Pessoas" asp-action="Adicionar">Adicionar Nova Pessoa</a>
+    </div>
+
+    <h1 class="display-4">Listagem de Pessoas</h1>
+    <b>
+         
+    </b> 
+
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th scope="col">ID</th> 
+      <th scope="col">Nome</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">CPF</th>  
+    </tr>
+  </thead>
+  <tbody>
+    @if(Model != null && Model.Any())
+    {
+        foreach(PessoaModel pessoa in Model)
+        { 
+            <tr>
+              <th scope="row">@pessoa.Id</th>
+              <td>@pessoa.Nome</td>
+              <td>@pessoa.Telefone</td>
+              <td>@pessoa.CPF</td>
+              <td>
+                <div class="btn-group" role="group">
+                  <a role="button" class="btn btn-primary btn-sm" asp-route-id="@pessoa.Id" asp-controller="Pessoas" asp-action="Atualizar">Editar Usuário</a>
+                  <a role="button" class="btn btn-danger btn-sm" asp-route-id="@pessoa.Id" asp-controller="Pessoas" asp-action="Remover">Apagar Usuário</a> 
+                </div> 
+              </td>
+            </tr> 
+        }
+    } 
+  </tbody>
+</table>
+</div>
+
+

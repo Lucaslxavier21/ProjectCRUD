@@ -1,0 +1,38 @@
+﻿@model PessoaModel
+@{
+
+    ViewData["Title"] = "Atualizar Pessoa";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Atualizar Pessoa</h1>
+
+</div>
+
+
+<form asp-controller="Pessoas" asp-action="Atualizar" method="post">
+
+    <input type="hidden" asp-for="Id"/>
+  <div class="form-row">
+   <div class="form-group">
+      <label for="inputName">Nome</label> 
+      <input type="text" asp-for="Nome" class="form-control" placeholder="Digite seu Nome">
+    </div>
+    <div class="form-group">
+      <label for="inputTelephone">Telefone</label>
+      <input type="tel" asp-for="Telefone" class="form-control" placeholder="Digite seu Telefone">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputCpf">CPF</label>
+    <input type="number" asp-for="CPF" class="form-control" placeholder="Digite o número do seu CPF">
+  </div> 
+  <div class="form-row">
+  </div>
+  <div class="form-group">
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm">Alterar</button>
+  <a class="btn btn-primary btn-sm" asp-controller="Enderecos" asp-action="Atualizar" role="button">Atualizar Endereço</a>
+  <a class="btn btn-secundary btn-sm" asp-controller="Pessoas" asp-action="Index" role="button">Voltar</a>
+</form>

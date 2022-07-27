@@ -1,0 +1,13 @@
+﻿@model EnderecoModel
+@{
+
+    ViewData["Title"] = "Deletar Endereço";
+}
+
+<div class="text-center">
+    <h3>Realmente deseja apagar este Endereço ?</h3>
+</div>
+
+<div class="d-grid gap-2">
+        <a class="btn btn-primary btn-block" role="button" asp-action="Index" asp-controller="Enderecos">Cancelar Exclusão</a>
+        <a class="btn btn-danger btn-block" role="button" asp-action="Remover" asp-controller="Enderecos" asp-route-id="@Model.Id">Confirmar Exclusão</a>  

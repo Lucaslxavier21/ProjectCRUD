@@ -1,0 +1,41 @@
+﻿@model EnderecoModel
+@{
+
+    ViewData["Title"] = "Atualizar Endereços";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Atualizar Endereços</h1>
+
+</div>
+
+
+<form asp-controller="Enderecos" asp-action="Atualizar" method="post">
+
+    <input type="hidden" asp-for="Id"/>
+  <div class="form-row">
+   <div class="form-group">
+      <label for="inputEnderecos">Endereço</label> 
+      <input type="text" asp-for="Endereco" class="form-control" placeholder="Digite seu Endereço">
+    </div>
+    <div class="form-group">
+      <label for="inputCEP">CEP</label>
+      <input type="number" asp-for="CEP" class="form-control" placeholder="Digite seu CEP">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputCidade">Cidade</label>
+    <input type="text" asp-for="Cidade" class="form-control" placeholder="Digite sua Cidade">
+  </div> 
+  <div class="form-group">
+    <label for="inputEstado">Estado</label>
+    <input type="text" asp-for="Estado" class="form-control" placeholder="Digite o seu Estado">
+  </div> 
+  <div class="form-row">
+  </div>
+  <div class="form-group">
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm">Alterar</button>
+  <a class="btn btn-secundary btn-sm" asp-controller="Enderecos" asp-action="Index" role="button">Voltar</a>
+</form>
